@@ -31,7 +31,7 @@ public class AuthService {
 
         mailService.sendEmail(user.getEmail(), "Bienvenue !", "Votre compte a été créé.");
 
-        return new AuthResponse(jwtUtil.generateToken((UserDetails) user));
+        return new AuthResponse(jwtUtil.generateToken(String.valueOf((UserDetails) user)));
     }
 
     public AuthResponse login(AuthRequest request) {
@@ -42,7 +42,7 @@ public class AuthService {
             throw new RuntimeException("Invalid password");
         }
 
-        return new AuthResponse(jwtUtil.generateToken((UserDetails) user));
+        return new AuthResponse(jwtUtil.generateToken(String.valueOf((UserDetails) user)));
     }
 }
 

@@ -15,5 +15,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
     boolean existsByEmail(String email);
 
     // Vérifier si un utilisateur existe par cin
-    boolean existsByCin(String cin);
+   // boolean existsByCin(String cin);
 }
